@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+		<!-- include font awesome icons fonts -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+		<!-- include jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Ring-a-ding-ding</title>
+    </head>
+    <body>
+        <div id="app">
+            <div id="side-menu">
+				<ul>
+					<li data-action="close-menu">
+						<i class="fa fa-times"></i> Close Menu
+					</li>
+          <li>
+          <a href="#options">
+            <i class="fa fa-cog"></i> Options
+          </a>
+          </li>
+          <li>
+          <a href="#contacts">
+            <i class="fa fa-cog"></i> Contacts
+          </a>
+          </li>
+          <li>
+            <a href="#settings">
+              <i class="fa fa-cog"></i> Settings
+            </a>
+          </li>
+          <li>
+            <a href="#sms">
+              <i class="fa fa-envelope"></i> Send SMS
+            </a>
+          </li>
+				</ul>
+			</div>
+			<div id="content">
+				<div id="header">
+					<h1>IoT App</h1>
+					<button class="menu-toggle" data-action="toggle-menu"><i class="fa fa-bars"></i></button>
+				</div>
+				<div data-role="page" id="options">
+          <div id="emergencyNumbers">
+            <button id="toggle_add_contact" class="btn raised">Add Contact</button>
+            <div id="add_contact" style="display: none;">
+            <input id="name" type="text" placeholder="Name"/>
+            <input id="phone" type="text" placeholder="Phone number"/>
+            <button id="btn_save" class="btn raised">Save</button>
+          </div>
+				</div>
+        <div id="empty_agenda">
+          <button id="btn_empty" class="btn raised">Clear Agenda</button>
+        </div>
+        <div id="alert_message">
+          <button id="toggle_message" class="btn raised">Change Alert Message</button>
+          <div id="change_message" style="display:none;">
+            <p id="current_message"></p>
+            <input id="message" type="text" placeholder="Alert"/>
+            <button id="btn_save_msg" class="btn raised">Save</button>
+          </div>
+        </div>
+			</div>
+      <div data-role="page" id="contacts">
+        <p>Contact numbers:</p>
+        <div id="contacts_list">
+        </div>
+      </div>
+      <div data-role="page" id="sms">
+                    <span>Telephone number:</span>
+					<input type="tel" id="numberTxt" /><br />
+                    <span>Message:</span>
+                    <input type="text" id="messageTxt" /><br />
+                    <button id="btnSend" class="btn btn-raised">Send!</button>
+				</div>
+
+				<div data-role="page" id="settings">
+					<input id="txtIp" type="text" />
+                    <button id="btnIp"> Change IP </button>
+				</div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
