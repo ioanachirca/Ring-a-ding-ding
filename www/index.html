@@ -24,31 +24,30 @@
 					</li>
           <li>
           <a href="#options">
-            <i class="fa fa-cog"></i> Options
+            <i class="fa fa-adjust"></i> Options
           </a>
           </li>
           <li>
           <a href="#contacts">
-            <i class="fa fa-cog"></i> Contacts
+            <i class="fa fa-users"></i> Contacts
           </a>
           </li>
           <li>
             <a href="#settings">
-              <i class="fa fa-cog"></i> Settings
-            </a>
-          </li>
-          <li>
-            <a href="#sms">
-              <i class="fa fa-envelope"></i> Send SMS
+              <i class="fa fa-cog"></i> IP Settings
             </a>
           </li>
 				</ul>
 			</div>
 			<div id="content">
 				<div id="header">
-					<h1>IoT App</h1>
+					<h1><img src="img/newlogo.png" style="width:100px; height:25px;"/></h1>
 					<button class="menu-toggle" data-action="toggle-menu"><i class="fa fa-bars"></i></button>
 				</div>
+        <div data-role="page" id="start">
+          <div id="image" style="position:absolute; width:100%; height:100%;  background-image: url('img/Bracelert.jpg');background-repeat: no-repeat;  background-size: contain;">
+          </div>
+        </div>
 				<div data-role="page" id="options">
           <div id="emergencyNumbers">
             <button id="toggle_add_contact" class="btn raised">Add Contact</button>
@@ -71,7 +70,16 @@
         </div>
 			</div>
       <div data-role="page" id="contacts">
-        <p>Contact numbers:</p>
+        <p id="noContacts" style="padding:8px; display: block;">You have no contacts yet. Go to options to add some.</p>
+        <table id="contactsTbl" border="1" style="width:100%; display: none">
+          <tr>
+            <th colspan="2"><strong>Your contacts</strong></th>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <th>Number</th>
+          </tr>
+        </table>
         <div id="contacts_list">
         </div>
       </div>

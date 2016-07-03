@@ -37,13 +37,13 @@ body {
 	height:100%;
 	display:inline-block;
 	background: #a4c639; /* Old browsers */
-	background: -moz-linear-gradient(left,  #a4c639 0%, #b1c473 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#a4c639), color-stop(100%,#b1c473)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  #a4c639 0%,#b1c473 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  #a4c639 0%,#b1c473 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  #a4c639 0%,#b1c473 100%); /* IE10+ */
-	background: linear-gradient(to right,  #a4c639 0%,#b1c473 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4c639', endColorstr='#b1c473',GradientType=1 ); /* IE6-9 */
+	background: -moz-linear-gradient(left,  #39c6b9 0%, #c9ece9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#39c6b9), color-stop(100%,#c9ece9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #39c6b9 0%,#c9ece9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #39c6b9 0%,#c9ece9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #39c6b9 0%,#c9ece9 100%); /* IE10+ */
+	background: linear-gradient(to right, #39c6b9 0%,#c9ece9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#39c6b9s', endColorstr='#c9ece9',GradientType=1 ); /* IE6-9 */
 	-webkit-box-shadow: inset -10px 0px 28px 3px rgba(0,0,0,0.63);
 	-moz-box-shadow: inset -10px 0px 28px 3px rgba(0,0,0,0.63);
 	box-shadow: inset -10px 0px 28px 3px rgba(0,0,0,0.63);
@@ -82,7 +82,7 @@ body {
 	position:absolute;
 	top:0;
 	z-index:1000;
-	background: #a4c639;
+	background: #39c6b9;
 	width:100%;
 	height:40px;
 	color:white;
@@ -125,7 +125,7 @@ button.btn.raised,a.btn.raised{
 	font-size:14px;
 	font-weight:500;
 	display:inline-block;
-	box-sizing: border-box;	
+	box-sizing: border-box;
 	min-width:64px;
 	height:36px;
 	padding:0 8px;
@@ -149,7 +149,7 @@ button.btn.flat,a.btn.flat{
 	font-size:14px;
 	font-weight:500;
 	display:inline-block;
-	box-sizing: border-box;	
+	box-sizing: border-box;
 	min-width:64px;
 	height:36px;
 	padding:0 8px;

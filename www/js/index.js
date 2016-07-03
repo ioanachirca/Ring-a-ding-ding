@@ -27,7 +27,7 @@ var boardIp = "192.168.1.202:8000/getstatus";
 var smsProps = {
     number : "0726242390",
     message : "Hilfe, hilfe mich!",
-    success : function () { alert('Message sent successfully'); },
+    success : function () {},
     error : function (e) { alert('Message Failed:' + e); },
 };
 
@@ -54,9 +54,10 @@ var app = {
     message = localStorage.getItem("message");
     if(message == null)
       message = "Oh oh.";
-    app.loadContacts();
+    //app.loadContacts();
     $("#btnSend").bind("click", app.sendSms);
 		setInterval(app.listenToRequest, 2000);
+    app.loadTable();
     },
     // Bind Event Listeners
     //
@@ -82,9 +83,10 @@ var app = {
             $("#name").val('');
             item = {name: name, phone: phone};
             localStorage.setItem("contact" + contacts_number, JSON.stringify(item));
-            $("#contacts").append(app.contactElementTemplate(contacts_number));
+            //$("#contacts").append(app.contactElementTemplate(contacts_number));
             contacts_number++;
             localStorage.setItem("contacts_number", contacts_number);
+            app.loadTable();
           }
         });
         $("#btn_save_msg").bind('click',function(){
@@ -112,7 +114,7 @@ var app = {
           contacts_number = 0;
           localStorage.setItem('contacts_number', contacts_number);
           alert("Agenda is cleared.");
-          app.loadContacts();
+          app.loadTable();
 
         });
     },
@@ -126,9 +128,9 @@ var app = {
                     for( var i = 0; i < parseInt(contacts_number); i++){
                       var item = JSON.parse(localStorage.getItem('contact' + i));
                       console.log(item.phone);
-                      smsProps.number = item.phone;
-                      smsProps.message = message;
-                      sms.send(smsProps.number, smsProps.message, {}, smsProps.success, smsProps.error);
+                      //smsProps.number = item.phone;
+                      //smsProps.message = message;
+                      sms.send(item.phone, message, {}, smsProps.success, smsProps.error);
                   }
                 }
             });
@@ -169,6 +171,31 @@ var app = {
     $("#contacts_list").html(' ');
     for(var i = 0; i < contacts_number; i++){
       $("#contacts_list").append(app.contactElementTemplate(i));
+    }
+  },
+
+  loadTable: function(){
+    var row = "";
+    $("#contactsTbl").html('<tr>\
+      <th colspan="2"><strong>Your contacts</strong></th>\
+    </tr>\
+    <tr>\
+      <th>Name</th>\
+      <th>Number</th>\
+    </tr> ');
+    if(contacts_number == 0){
+      $("#noContacts").show();
+      $("#contactsTbl").hide();
+    }
+    else{
+      $("#noContacts").hide();
+      for(var i = 0; i < parseInt(contacts_number); i++){
+        var item = JSON.parse(localStorage.getItem('contact' + i));
+        row = "<tr><td>" + item.name + "</td><td>" + item.phone + "</td><tr>";
+        $("#contactsTbl").append(row);
+      }
+
+      $("#contactsTbl").show();
     }
   },
 
